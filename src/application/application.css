@@ -1,0 +1,28 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.view {
+	-fx-opacity:0.0 0.5;
+}
+
+.button {
+
+    -fx-border-color: #D7D8D8;
+    -fx-border-width: 1;
+    -fx-opacity: 0.8; 
+    -fx-background-color:  #313131;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 15pt;
+    -fx-text-fill: #0bf5f1;
+}
+
+.button::focus {
+
+    -fx-border-color: #D7D8D8;
+    -fx-background-color:  #D7D8D8;
+
+}
+
+#labelChrono,  #labelScore, #labelPoints, #labelTS {
+	-fx-background-color:  #0bf5f1;
+	
+}
