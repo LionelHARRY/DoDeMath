@@ -51,6 +51,9 @@ public class Party {
 		chrono.stop();
 		
 		score = MainExec.getScoreLabel().getText();
+		if(score.equals("")){
+			score = "0";
+		}
 		scoreInt = Integer.parseInt(score);
 		try {
 			recordedScore = file.readFile();
@@ -135,7 +138,15 @@ public class Party {
         		MainExec.getDpn5().setText("");
         		
         		displayKeyboard();
-        		chrono = new Chrono();
+        		
+        		if(scoreInt < 50){
+        			chrono = new Chrono();
+        		}else if(scoreInt > 50 && scoreInt < 70){
+        			chrono = new Chrono(20);
+        		}else if(scoreInt > 70){
+        			chrono = new Chrono(15);
+        		}
+        		
         		chrono.start();
             }
         });
