@@ -45,9 +45,11 @@ public class MainExec{
 	private @FXML Label chronoDP;
 	private @FXML Label pointsDP;
 	private @FXML Label scoreDP;
+	private @FXML Label bestScoreDP;
 	private static Label chronoLabel;
 	private static Label pointsLabel;
 	private static Label scoreLabel;
+	private static Label bestScoreLabel;
 	private static Label dpn1Label;
 	private static Label dpn2Label;
 	private static Label dpn3Label;
@@ -76,6 +78,7 @@ public class MainExec{
 		chronoLabel = chronoDP;
 		pointsLabel = pointsDP;
 		scoreLabel = scoreDP;
+		bestScoreLabel = bestScoreDP;
 		main_displayLabel = main_display;
 		result_displayLabel = result_display;
 		
@@ -177,6 +180,10 @@ public class MainExec{
 	
 	public static Label getScoreLabel(){
 		return scoreLabel;
+	}
+	
+	public static Label getBestScoreLabel(){
+		return bestScoreLabel;
 	}
 	
 	public static Label getDpn1(){
