@@ -1,13 +1,22 @@
 package application;
 
+
 import application.Chrono;
 import application.Generator;
 import exec.MainExec;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
+
 
 public class Party {
 	private Generator generator;
 	private Chrono chrono;
+
 	
+	/**
+	 * Start a new party
+	 */
 	public void start(){
 		MainExec.getOkButton().setText("NO");
 		MainExec.getScoreLabel().setText("0");
@@ -17,6 +26,9 @@ public class Party {
 		chrono.start();
 	}
 	
+	/**
+	 * Stops the current party
+	 */
 	public void stop(){
 		chrono.stop();
 		MainExec.getOkButton().setText("GO");
@@ -37,6 +49,40 @@ public class Party {
 		MainExec.getKey6().setText("");
 		
 	}
+	
+	public void next() throws InterruptedException{
+		chrono.stop();
+
+		Task<Void> sleeper = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                }
+                return null;
+            }
+        };
+        sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+            @Override
+            public void handle(WorkerStateEvent event) {
+            	MainExec.getResult_displayLabel().setText("");
+            	MainExec.getPointsLabel().setText("");
+        		MainExec.getDpn1().setText("");
+        		MainExec.getDpn2().setText("");
+        		MainExec.getDpn3().setText("");
+        		MainExec.getDpn4().setText("");
+        		MainExec.getDpn5().setText("");
+        		
+        		displayKeyboard();
+        		chrono = new Chrono();
+        		chrono.start();
+            }
+        });
+        new Thread(sleeper).start();
+
+	}
+
 	
 	/**
 	 * Displays the number to find in the main screen.<br>
@@ -75,8 +121,7 @@ public class Party {
     		MainExec.getDpn3().setText(value);
     	}else if(!MainExec.getDpn4().getText().equals("") && MainExec.getDpn5().getText().equals("") ){
     		MainExec.getDpn5().setText(value);
-    		
-    		//operations();
+
 			Operations.operation();
     	}
 	}

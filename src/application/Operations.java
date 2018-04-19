@@ -31,7 +31,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				////cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -42,7 +47,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 				
 		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("-") == 0 ){
@@ -53,7 +63,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points */
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -62,7 +77,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("x") == 0 ){
@@ -73,7 +93,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -82,7 +107,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("/") == 0 ){
@@ -94,7 +124,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -103,7 +138,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -117,7 +157,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -125,7 +170,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("+") == 0 ){
@@ -136,7 +186,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -145,7 +200,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("x") == 0 ){
@@ -156,7 +216,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -164,7 +229,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("/") == 0 ){
@@ -176,7 +246,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -184,7 +259,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -198,7 +278,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -207,7 +292,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("-") == 0 ){
@@ -218,7 +308,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -227,7 +322,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("+") == 0 ){
@@ -238,7 +338,12 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
 				Scores.setScore5();
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}else if(result >= nb6a + 2 || result <= nb6a - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
@@ -247,7 +352,12 @@ public class Operations{
 				Scores.setScore1();
 				resultat = String.valueOf(result);
 				MainExec.getResult_displayLabel().setText(resultat);
-				//cn.Editchrono("STOP");
+				try {
+					MainExec.getParty().next();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			
 		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("/") == 0 ){
@@ -259,7 +369,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -268,7 +383,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -283,7 +403,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -292,7 +417,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -307,7 +437,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -316,7 +451,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
@@ -331,7 +471,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -339,7 +484,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				
 			}else{
@@ -355,7 +505,12 @@ public class Operations{
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
 					Scores.setScore5();
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else if(result >= nb6a + 2 || result <= nb6a - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
@@ -364,7 +519,12 @@ public class Operations{
 					Scores.setScore1();
 					resultat = String.valueOf(result);
 					MainExec.getResult_displayLabel().setText(resultat);
-					//cn.Editchrono("STOP");
+					try {
+						MainExec.getParty().next();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}else{
 				MainExec.getResult_displayLabel().setText("TRY");
