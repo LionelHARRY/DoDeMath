@@ -1,6 +1,8 @@
 package application;
 
 
+import java.io.IOException;
+
 import application.Chrono;
 import application.Generator;
 import exec.MainExec;
@@ -12,6 +14,15 @@ import javafx.event.EventHandler;
 public class Party {
 	private Generator generator;
 	private Chrono chrono;
+	private EditFile file;
+	private String score;
+	private int scoreInt;
+	private String recordedScore;
+	private int recordedScoreInt;
+	
+	public Party(){
+		file = new EditFile();
+	}
 
 	
 	/**
@@ -21,6 +32,13 @@ public class Party {
 		MainExec.getOkButton().setText("NO");
 		MainExec.getScoreLabel().setText("0");
 		MainExec.getPointsLabel().setText("0");
+		try {
+			recordedScore = file.readFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		MainExec.getBestScoreLabel().setText(recordedScore);
 		displayKeyboard();
 		chrono = new Chrono();
 		chrono.start();
@@ -31,6 +49,29 @@ public class Party {
 	 */
 	public void stop(){
 		chrono.stop();
+		
+		score = MainExec.getScoreLabel().getText();
+		if(score.equals("")){
+			score = "0";
+		}
+		scoreInt = Integer.parseInt(score);
+		try {
+			recordedScore = file.readFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		recordedScoreInt = Integer.parseInt(recordedScore);
+		
+		if(scoreInt > recordedScoreInt){
+			try {
+				file.writeFile(score);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		MainExec.getOkButton().setText("GO");
 		MainExec.getMain_displayLabel().setText("");
 		MainExec.getResult_displayLabel().setText("");
@@ -66,6 +107,28 @@ public class Party {
         sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
             @Override
             public void handle(WorkerStateEvent event) {
+            	score = MainExec.getScoreLabel().getText();
+        		scoreInt = Integer.parseInt(score);
+        		try {
+        			recordedScore = file.readFile();
+        		} catch (IOException e) {
+        			// TODO Auto-generated catch block
+        			e.printStackTrace();
+        		}
+        		recordedScoreInt = Integer.parseInt(recordedScore);
+        		
+        		if(scoreInt > recordedScoreInt){
+        			MainExec.getBestScoreLabel().setText(score);
+        			try {
+        				file.writeFile(score);
+        			} catch (IOException e) {
+        				// TODO Auto-generated catch block
+        				e.printStackTrace();
+        			}
+        		}else{
+        			MainExec.getBestScoreLabel().setText(recordedScore);
+        		}
+        		
             	MainExec.getResult_displayLabel().setText("");
             	MainExec.getPointsLabel().setText("");
         		MainExec.getDpn1().setText("");
@@ -75,7 +138,15 @@ public class Party {
         		MainExec.getDpn5().setText("");
         		
         		displayKeyboard();
-        		chrono = new Chrono();
+        		
+        		if(scoreInt < 50){
+        			chrono = new Chrono();
+        		}else if(scoreInt > 50 && scoreInt < 70){
+        			chrono = new Chrono(20);
+        		}else if(scoreInt > 70){
+        			chrono = new Chrono(15);
+        		}
+        		
         		chrono.start();
             }
         });

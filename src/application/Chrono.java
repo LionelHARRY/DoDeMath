@@ -10,18 +10,24 @@ import javafx.util.Duration;
 
 public class Chrono{
 
-	private  final Integer STARTTIME = 60;
-    private Timeline timeline;
-    private IntegerProperty timeSeconds = new SimpleIntegerProperty(STARTTIME);
+	private  final Integer STARTTIME;
+    private Timeline timeline =  new Timeline();
+    private IntegerProperty timeSeconds;
+    
     
     public Chrono(){
-    	timeline = new Timeline();
+    	this(25);	
+    }
+    
+    public Chrono(int seconds){
+    	STARTTIME = seconds;
     }
     
     /**
      * Start the chrono.
      */
     public void start(){
+    	timeSeconds = new SimpleIntegerProperty(STARTTIME);
     	// Bind the timerLabel text property to the timeSeconds property
     	MainExec.getChronoLabel().textProperty().bind(timeSeconds.asString());
         
