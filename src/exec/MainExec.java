@@ -1,5 +1,7 @@
 package exec;
 
+import java.util.ArrayList;
+
 import application.Main;
 import application.Party;
 import javafx.beans.value.ChangeListener;
@@ -8,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -65,7 +68,43 @@ public class MainExec{
 	private static Button key5Button;
 	private static Button key6Button;
 	
+	
+	@FXML
+	private void keyPressed(KeyEvent event){
+		//System.out.println(event.getCode());
+		if(btnOk.getText().equals("NO")){
+			if(event.getCode().isDigitKey()){
+				ArrayList<String> availableNumbers = new ArrayList<>();
+				availableNumbers.add(key1.getText());
+				availableNumbers.add(key2.getText());
+				availableNumbers.add(key3.getText());
+				availableNumbers.add(key4.getText());
+				availableNumbers.add(key5.getText());
+				availableNumbers.add(key6.getText());
+				ATTEMPT : for(int i = 0; i < availableNumbers.size(); i++){
+					if(event.getText().equals(availableNumbers.get(i))){
+						party.displaySelectedNumbers(event.getText());
+						break ATTEMPT;
+					}
+				}
 
+			}else if(event.getText().equals("+")){
+				party.displayOperators("+");
+			}else if(event.getText().equals("-")){
+				party.displayOperators("-");
+			}else if(event.getText().equals("/")){
+				party.displayOperators("/");
+			}else if(event.getText().equals("*")){
+				party.displayOperators("x");
+			}
+		}
+		
+	}
+	
+	@FXML
+	private void enter(KeyEvent event){
+		//if(event.getText())
+	}
 	
 	/**
 	 * Sets invisible the first AnchorPane when button 'play' pressed.
@@ -129,10 +168,18 @@ public class MainExec{
 		}
 		
 	}
+	
+	@FXML
+    private void keyTyped(KeyEvent event){
+		String st = event.getCharacter();
+		System.out.println(st);
+		dpn1.setText(st);
+	}
 
 	/**
 	 * Displays values pressed on the keyboard on a screen.
 	 * @param event ActionEvent of the keyboard.
+	 * @see application.Party.displaySelectedNumbers(String value)
 	 */
 	@FXML
 	private void keyboardPressed(ActionEvent event){
