@@ -191,7 +191,7 @@
             <Button fx:id="btnOk" layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#mainButtonPressed" prefHeight="141.0" prefWidth="76.0" style="-fx-background-radius: 10; -fx-background-color: #ffffff19;" text="GO" AnchorPane.rightAnchor="11.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="firstView" onKeyPressed="#enter" layoutY="24.0" prefHeight="492.0" prefWidth="438.0" style="-fx-background-color: #313131;">
+      <AnchorPane fx:id="firstView" onKeyPressed="#keyPressed" layoutY="24.0" prefHeight="492.0" prefWidth="438.0" style="-fx-background-color: #313131;">
          <children>
             <Button fx:id="btnPlay"  layoutX="150.0" layoutY="375.0" mnemonicParsing="false" onAction="#readyToplay" prefHeight="68.0" prefWidth="139.0" style="-fx-background-radius: 30; -fx-background-color: #ffffff19;" text="PLAY" textFill="#fcf9f9">
                <font>
