@@ -97,6 +97,7 @@ public class MainExec{
 		
 		okButton = btnOk;
 		
+		startParty();
     }
 
 	/**
@@ -108,9 +109,7 @@ public class MainExec{
 		
 		switch(btnOk.getText()){
 		case("GO"):		
-			party = new Party();
-			actualParty = party;
-			party.start();
+			startParty();
 
 			// A Listener for the Label chronoDP. Stops the party when the time equals 0.
 			chronoDP.textProperty().addListener(new ChangeListener<String>() {
@@ -130,6 +129,15 @@ public class MainExec{
 		
 	}
 
+	/**
+	 * Calls a new party object
+	 */
+	private void startParty() {
+		party = new Party();
+		actualParty = party;
+		party.start();
+	}
+	
 	/**
 	 * Displays values pressed on the keyboard on a screen.
 	 * @param event ActionEvent of the keyboard.
