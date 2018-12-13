@@ -1,7 +1,7 @@
-package application;
+package com.dodemath.app;
 
-import exec.MainExec;
-import application.Scores;
+import com.dodemath.exec.MainExec;
+import com.dodemath.app.Scores;
 
 public class Operations{
 	

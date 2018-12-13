@@ -1,11 +1,11 @@
-package application;
+package com.dodemath.app;
 
 
 import java.io.IOException;
 
-import application.Chrono;
-import application.Generator;
-import exec.MainExec;
+import com.dodemath.app.Chrono;
+import com.dodemath.app.Generator;
+import com.dodemath.exec.MainExec;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;

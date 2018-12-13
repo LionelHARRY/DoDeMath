@@ -1,6 +1,6 @@
-package application;
+package com.dodemath.app;
 
-import exec.MainExec;
+import com.dodemath.exec.MainExec;
 
 public class Scores{
 

@@ -1,4 +1,4 @@
-package application;
+package com.dodemath.app;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

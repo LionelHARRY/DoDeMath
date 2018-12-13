@@ -1,4 +1,4 @@
-package application;
+package com.dodemath.app;
 
 
 public class Generator {

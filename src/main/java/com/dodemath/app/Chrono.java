@@ -1,6 +1,6 @@
-package application;
+package com.dodemath.app;
 
-import exec.MainExec;
+import com.dodemath.exec.MainExec;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;

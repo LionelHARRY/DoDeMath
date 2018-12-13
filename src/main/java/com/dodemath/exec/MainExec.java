@@ -1,10 +1,10 @@
-package exec;
+package com.dodemath.exec;
 
 //import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import application.Main;
-import application.Party;
+import com.dodemath.app.Main;
+import com.dodemath.app.Party;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
