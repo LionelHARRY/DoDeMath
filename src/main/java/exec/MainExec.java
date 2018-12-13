@@ -1,5 +1,8 @@
 package exec;
 
+//import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
 import application.Main;
 import application.Party;
 import javafx.beans.value.ChangeListener;
@@ -10,6 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 
 
@@ -23,6 +29,7 @@ public class MainExec{
 	private static Party actualParty;
 	private final Delta dragDelta = new Delta();
     private @FXML AnchorPane firstView;
+    private @FXML AnchorPane mainView;
 	private @FXML Button btnOk;
 	private @FXML Button btnPlay;
 	private @FXML Button key1;
@@ -65,14 +72,65 @@ public class MainExec{
 	private static Button key5Button;
 	private static Button key6Button;
 	
-
+	
+	/**
+	 * Listen to the keyboard (hardware). The player can use digital keys to select numbers and 'enter' key when validation is needed.
+	 * 'enter' key is also used to start or stop the party.
+	 * 
+	 * @param event KeyEvent
+	 * @see application.Party.displaySelectedNumbers(String value)
+	 * @see application.Party.displayOperators(String value)
+	 */
+	@FXML
+	private void EnterKeyPressed(KeyEvent event){
+ 		if(firstView.isVisible() && event.getCode().equals(KeyCode.ENTER)){
+			firstAnchorpaneAction();
+		}else if(!firstView.isVisible() && event.getCode().equals(KeyCode.ENTER)){
+			startStopAction();
+		}
+ 		if(btnOk.getText().equals("NO")){
+			if(event.getCode().isDigitKey()){
+				ArrayList<String> availableNumbers = new ArrayList<>();
+ 				availableNumbers.add(key1.getText());
+ 				availableNumbers.add(key2.getText());
+ 				availableNumbers.add(key3.getText());
+ 				availableNumbers.add(key4.getText());
+ 				availableNumbers.add(key5.getText());
+ 				availableNumbers.add(key6.getText());
+ 				ATTEMPT : for(int i = 0; i < availableNumbers.size(); i++){
+ 					if(event.getText().equals(availableNumbers.get(i))){
+ 						party.displaySelectedNumbers(event.getText());
+ 						break ATTEMPT;
+ 					}
+ 				}
+ 
+ 			}else if(event.getText().equals("+")){
+ 				party.displayOperators("+");
+ 			}else if(event.getText().equals("-")){
+ 				party.displayOperators("-");
+ 			}else if(event.getText().equals("/")){
+ 				party.displayOperators("/");
+ 			}else if(event.getText().equals("*")){
+ 				party.displayOperators("x");
+ 			}
+ 		}
+		
+	}
 	
 	/**
 	 * Sets invisible the first AnchorPane when button 'play' pressed.
 	 * @param event ActionEvent of button 'play' in the first AnchorPane.
+	 * @see MainExec.firstAnchorpaneAction()
 	 */
 	@FXML
     private void readyToplay(ActionEvent event) {
+		firstAnchorpaneAction();	
+    }
+	
+	/**
+	 * Sets firstView anchorpae invisible and initializes static variables.
+	 */
+	private void firstAnchorpaneAction(){
 		firstView.setVisible(false);
 		
 		chronoLabel = chronoDP;
@@ -106,6 +164,11 @@ public class MainExec{
 	 */
 	@FXML
 	private void mainButtonPressed(ActionEvent event){
+		
+		startStopAction();
+	}
+	
+	private void startStopAction(){
 		
 		switch(btnOk.getText()){
 		case("GO"):		
@@ -144,37 +207,28 @@ public class MainExec{
 	 */
 	@FXML
 	private void keyboardPressed(ActionEvent event){
-		
-		if(event.getTarget() == key1){
-			String value = key1.getText();
-	    	party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == key2){
-			String value = key2.getText();
-			party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == key3){
-			String value = key3.getText();
-			party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == key4){
-			String value = key4.getText();
-			party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == key5){
-			String value = key5.getText();
-			party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == key6){
-			String value = key6.getText();
-			party.displaySelectedNumbers(value);
-		}else if(event.getTarget() == btnPlus){
-			String value = btnPlus.getText();
-			party.displayOperators(value);
-		}else if(event.getTarget() == btnMoins){
-			String value = btnMoins.getText();
-			party.displayOperators(value);
-		}else if(event.getTarget() == btnMulti){
-			String value = btnMulti.getText();
-			party.displayOperators(value);
-		}else if(event.getTarget() == btnDiv){
-			String value = btnDiv.getText();
-			party.displayOperators(value);
+		if(!firstView.isVisible()) {
+			if(event.getTarget() == key1){
+		    	party.displaySelectedNumbers(key1.getText());
+			}else if(event.getTarget() == key2){
+				party.displaySelectedNumbers(key2.getText());
+			}else if(event.getTarget() == key3){
+				party.displaySelectedNumbers(key3.getText());
+			}else if(event.getTarget() == key4){
+				party.displaySelectedNumbers(key4.getText());
+			}else if(event.getTarget() == key5){
+				party.displaySelectedNumbers(key5.getText());
+			}else if(event.getTarget() == key6){
+				party.displaySelectedNumbers(key6.getText());
+			}else if(event.getTarget() == btnPlus){
+				party.displayOperators(btnPlus.getText());
+			}else if(event.getTarget() == btnMoins){
+				party.displayOperators(btnMoins.getText());
+			}else if(event.getTarget() == btnMulti){
+				party.displayOperators(btnMulti.getText());
+			}else if(event.getTarget() == btnDiv){
+				party.displayOperators(btnDiv.getText());
+			}
 		}
 	}
 	
