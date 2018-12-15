@@ -39,7 +39,7 @@ public class Generator {
 	private void numbers(){
 
 		/* Random numbers that will be displayed on the keyboard */
-		/* Make sure each number is different from an other */
+		/* Make sure each number is different from each other */
 		nb1 =  nbMinbtn + (int)(Math.random() * ((nbMaxbtn - nbMinbtn) + 1));
 		
 		do{
@@ -79,114 +79,125 @@ public class Generator {
 		keyNumbers[4] = stnb5;
 		keyNumbers[5] = stnb6;
 		
-		/*Number to resolve*/
-		numOp = nbMinOp + (int)(Math.random() * ((nbMaxOp - nbMinOp) + 1));
 		
-		/*Possible operations*/
-		if(numOp == 1 ){
-			nbc = (nb1 + nb4) + nb5;
-		}else if(numOp == 2 ){
-			if((nb4 + nb3) > nb5){
-				nbc = (nb4 + nb3) - nb5;
-			}else{
-				nbc = (nb5 + nb4) - nb3;
-			}
-		}else if(numOp == 3){
-			nbc = (nb3 + nb2) * nb2;
-		}else if(numOp == 4 ){
-			if((nb6 + nb3) > nb1 && nb1 !=0){
-				nbc = (nb6 + nb3) / nb1;
-			}else if(nb3 !=0){
-				nbc = nb1 + (nb6 / nb3);
-			}else{
-				nbc = nb1 + (nb3 / nb6);
-			}
-		}else if(numOp == 5){
-			if((nb2 - nb3) > nb5){
-				nbc = (nb2 - nb3) - nb5;
-			}else{
-				nbc = (nb5 - nb2) - nb3;
-			}
+		
+		/*Number to resolve*/
+		/*Make sure the number to resolve is never equal to any of*/
+		/*the numbers in the keyboard*/
+		do {
 			
-		}else if(numOp == 6){
-
-			if(nb1  > nb3){
-				nbc = (nb1 - nb3) + nb5;
-			}else{
-				nbc = (nb3 - nb1) + nb5;
-			}
+			/*Number of the operation*/
+			numOp = nbMinOp + (int)(Math.random() * ((nbMaxOp - nbMinOp) + 1));
 			
-		}else if(numOp == 7){
-			nbc = (nb2 - nb3) * nb5;
-		}else if(numOp == 8){
-			
-			if(nb6 != 0 && (nb4- nb1) > nb6){
-				nbc = (nb4 - nb1) / nb6;
-			}else{
-				numOp = 9;
-			}
-			
-		}else if(numOp == 9){
-			
-			nbc = (nb4 * nb5) * nb5;
-	
-		}else if(numOp == 10){
-
-			if((nb5 * nb6) > nb4){
-				nbc = (nb5 * nb6) - nb5;
-			}else{
-				nbc = (nb5 * nb4) - nb6;
-			}
-			
-		}else if(numOp == 11 ){
-			
-			nbc = (nb1 * nb3) + nb6;
-
-		}else if(numOp == 12){
-			if(nb2 != 0 && (nb3 * nb3) > nb2){
-				nbc = (nb3 * nb3) / nb2;
-			}else if(nb3 != 0) {
-				nbc = (nb3 * nb2) / nb3;
-			}else{
-				nbc = (nb1 * nb3) + nb6;
-			}
-			
-		}else if(numOp == 13){
-
-			if(nb3 != 0 && nb6 != 0 ){
-				nbc = (nb2 / nb3) / nb6;
-			}else{
-				nbc = (nb4 * nb5) * nb5;
-			}
-			
-		}else if(numOp == 14){
-
-			if(nb3 > nb2 && nb2 !=0){
-				if((nb3 / nb2) > nb5 && nb5 != 0){
-					nbc = (nb3 / nb2) - nb5;
+			/*Possible operations*/
+			if(numOp == 1 ){
+				nbc = (nb1 + nb4) + nb5;
+			}else if(numOp == 2 ){
+				if((nb4 + nb3) > nb5){
+					nbc = (nb4 + nb3) - nb5;
+				}else{
+					nbc = (nb5 + nb4) - nb3;
+				}
+			}else if(numOp == 3){
+				nbc = (nb3 + nb2) * nb2;
+			}else if(numOp == 4 ){
+				if((nb6 + nb3) > nb1 && nb1 !=0){
+					nbc = (nb6 + nb3) / nb1;
+				}else if(nb3 !=0){
+					nbc = nb1 + (nb6 / nb3);
+				}else{
+					nbc = nb1 + (nb3 / nb6);
+				}
+			}else if(numOp == 5){
+				if((nb2 - nb3) > nb5){
+					nbc = (nb2 - nb3) - nb5;
+				}else{
+					nbc = (nb5 - nb2) - nb3;
 				}
 				
-			}else if(nb3 != 0){
-				nbc = (nb5 / nb3) - nb2;
-			}else{
+			}else if(numOp == 6){
+
+				if(nb1  > nb3){
+					nbc = (nb1 - nb3) + nb5;
+				}else{
+					nbc = (nb3 - nb1) + nb5;
+				}
+				
+			}else if(numOp == 7){
+				nbc = (nb2 - nb3) * nb5;
+			}else if(numOp == 8){
+				
+				if(nb6 != 0 && (nb4- nb1) > nb6){
+					nbc = (nb4 - nb1) / nb6;
+				}else{
+					numOp = 9;
+				}
+				
+			}else if(numOp == 9){
+				
+				nbc = (nb4 * nb5) * nb5;
+		
+			}else if(numOp == 10){
+
+				if((nb5 * nb6) > nb4){
+					nbc = (nb5 * nb6) - nb5;
+				}else{
+					nbc = (nb5 * nb4) - nb6;
+				}
+				
+			}else if(numOp == 11 ){
+				
 				nbc = (nb1 * nb3) + nb6;
+
+			}else if(numOp == 12){
+				if(nb2 != 0 && (nb3 * nb3) > nb2){
+					nbc = (nb3 * nb3) / nb2;
+				}else if(nb3 != 0) {
+					nbc = (nb3 * nb2) / nb3;
+				}else{
+					nbc = (nb1 * nb3) + nb6;
+				}
+				
+			}else if(numOp == 13){
+
+				if(nb3 != 0 && nb6 != 0 ){
+					nbc = (nb2 / nb3) / nb6;
+				}else{
+					nbc = (nb4 * nb5) * nb5;
+				}
+				
+			}else if(numOp == 14){
+
+				if(nb3 > nb2 && nb2 !=0){
+					if((nb3 / nb2) > nb5 && nb5 != 0){
+						nbc = (nb3 / nb2) - nb5;
+					}
+					
+				}else if(nb3 != 0){
+					nbc = (nb5 / nb3) - nb2;
+				}else{
+					nbc = (nb1 * nb3) + nb6;
+				}
+				
+			}else if(numOp == 15){
+				if(nb4 != 0){
+					nbc = (nb6 / nb4) + nb1;
+				}else{
+					nbc = (nb1 * nb3) + nb6;
+				}
+
+			}else if(numOp == 16){
+				if(nb3 != 0){
+					nbc = (nb4 / nb3) * nb5;
+				}else{
+					nbc = (nb5 - nb2) - nb3;
+				}
+
 			}
 			
-		}else if(numOp == 15){
-			if(nb4 != 0){
-				nbc = (nb6 / nb4) + nb1;
-			}else{
-				nbc = (nb1 * nb3) + nb6;
-			}
-
-		}else if(numOp == 16){
-			if(nb3 != 0){
-				nbc = (nb4 / nb3) * nb5;
-			}else{
-				nbc = (nb5 - nb2) - nb3;
-			}
-
-		}
+		}while(nbc == nb1 || nbc == nb2 || nbc == nb3 || nbc == nb4 || nbc == nb5 || nbc == nb6 );
+		
+		
 		stnbc = Integer.toString(nbc);
 
 	}

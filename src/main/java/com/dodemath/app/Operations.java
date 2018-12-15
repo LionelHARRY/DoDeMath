@@ -13,20 +13,20 @@ public class Operations{
 	 * </u>
 	 */
 	public static void operation(){
-		String nb2 = MainExec.getDpn2().getText();
-		String nb4 = MainExec.getDpn4().getText();
-		String resultat;
+		String operator_1 = MainExec.getDpn2().getText();
+		String operator_2 = MainExec.getDpn4().getText();
+		String stringResult;
 		
-		long nb1 = Integer.parseInt(MainExec.getDpn1().getText());
-		long nb3a = Integer.parseInt(MainExec.getDpn3().getText());
-		long nb5a = Integer.parseInt(MainExec.getDpn5().getText());
-		long nb6a = Integer.parseInt(MainExec.getMain_displayLabel().getText());
+		long number_1 = Integer.parseInt(MainExec.getDpn1().getText());
+		long number_2 = Integer.parseInt(MainExec.getDpn3().getText());
+		long number_3 = Integer.parseInt(MainExec.getDpn5().getText());
+		long screenResult = Integer.parseInt(MainExec.getMain_displayLabel().getText());
 		long result;
 		
-		if(nb2.compareTo("+") == 0 && nb4.compareTo("+") == 0 ){
+		if(operator_1.compareTo("+") == 0 && operator_2.compareTo("+") == 0 ){
 			
-			result = (nb1 + nb3a) + nb5a;
-			if(result == nb6a){
+			result = (number_1 + number_2) + number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -37,7 +37,7 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				
 				MainExec.getResult_displayLabel().setText("TRY");
 
@@ -45,8 +45,8 @@ public class Operations{
 			}else{
 				/*Give 1 point*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -55,10 +55,10 @@ public class Operations{
 				}
 			}
 				
-		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("-") == 0 ){
+		}else if(operator_1.compareTo("+") == 0 && operator_2.compareTo("-") == 0 ){
 			
-			result = (nb1 + nb3a) - nb5a;
-			if(result == nb6a){
+			result = (number_1 + number_2) - number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points */
@@ -69,14 +69,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -85,10 +85,10 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("x") == 0 ){
+		}else if(operator_1.compareTo("+") == 0 && operator_2.compareTo("x") == 0 ){
 			
-			result = (nb1 + nb3a) * nb5a;
-			if(result == nb6a){
+			result = (number_1 + number_2) * number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -99,14 +99,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -115,11 +115,11 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("+") == 0 && nb4.compareTo("/") == 0 ){
+		}else if(operator_1.compareTo("+") == 0 && operator_2.compareTo("/") == 0 ){
 			
-			if(nb5a != 0){
-				result = (nb1 + nb3a) / nb5a;
-				if(result == nb6a){
+			if(number_3 != 0){
+				result = (number_1 + number_2) / number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -130,14 +130,14 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -149,10 +149,10 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 			
-		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("-") == 0 ){
+		}else if(operator_1.compareTo("-") == 0 && operator_2.compareTo("-") == 0 ){
 			
-			result = (nb1 - nb3a) - nb5a;
-			if(result == nb6a){
+			result = (number_1 - number_2) - number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -163,13 +163,13 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -178,10 +178,10 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("+") == 0 ){
+		}else if(operator_1.compareTo("-") == 0 && operator_2.compareTo("+") == 0 ){
 			
-			result = (nb1 - nb3a) + nb5a;
-			if(result == nb6a){
+			result = (number_1 - number_2) + number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -192,14 +192,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -208,10 +208,10 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("x") == 0 ){
+		}else if(operator_1.compareTo("-") == 0 && operator_2.compareTo("x") == 0 ){
 			
-			result = (nb1 - nb3a) * nb5a;
-			if(result == nb6a){
+			result = (number_1 - number_2) * number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -222,13 +222,13 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -237,11 +237,11 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("-") == 0 && nb4.compareTo("/") == 0 ){
+		}else if(operator_1.compareTo("-") == 0 && operator_2.compareTo("/") == 0 ){
 			
-			if(nb5a != 0){
-				result = (nb1 - nb3a) / nb5a;
-				if(result == nb6a){
+			if(number_3 != 0){
+				result = (number_1 - number_2) / number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -252,13 +252,13 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -270,10 +270,10 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 			
-		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("x") == 0 ){
+		}else if(operator_1.compareTo("x") == 0 && operator_2.compareTo("x") == 0 ){
 			
-			result = (nb1 * nb3a) * nb5a;
-			if(result == nb6a){
+			result = (number_1 * number_2) * number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -284,14 +284,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -300,10 +300,10 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("-") == 0 ){
+		}else if(operator_1.compareTo("x") == 0 && operator_2.compareTo("-") == 0 ){
 			
-			result = (nb1 * nb3a) - nb5a;
-			if(result == nb6a){
+			result = (number_1 * number_2) - number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -314,14 +314,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -330,10 +330,10 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("+") == 0 ){
+		}else if(operator_1.compareTo("x") == 0 && operator_2.compareTo("+") == 0 ){
 			
-			result = (nb1 * nb3a) + nb5a;
-			if(result == nb6a){
+			result = (number_1 * number_2) + number_3;
+			if(result == screenResult){
 				
 				MainExec.getResult_displayLabel().setText("" + result);
 				/*Give 5 points*/
@@ -344,14 +344,14 @@ public class Operations{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if(result >= nb6a + 2 || result <= nb6a - 2){
+			}else if(result >= screenResult + 2 || result <= screenResult - 2){
 				MainExec.getResult_displayLabel().setText("TRY");
 			}else{
 				
 				/*Give 1 points*/
 				Scores.setScore1();
-				resultat = String.valueOf(result);
-				MainExec.getResult_displayLabel().setText(resultat);
+				stringResult = String.valueOf(result);
+				MainExec.getResult_displayLabel().setText(stringResult);
 				try {
 					MainExec.getParty().next();
 				} catch (InterruptedException e) {
@@ -360,11 +360,11 @@ public class Operations{
 				}
 			}
 			
-		}else if(nb2.compareTo("x") == 0 && nb4.compareTo("/") == 0 ){
+		}else if(operator_1.compareTo("x") == 0 && operator_2.compareTo("/") == 0 ){
 			
-			if(nb5a != 0){
-				result = (nb1 * nb3a) / nb5a;
-				if(result == nb6a){
+			if(number_3 != 0){
+				result = (number_1 * number_2) / number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -375,14 +375,14 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -394,11 +394,11 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 
-		}else if(nb2.compareTo("/") == 0 && nb4.compareTo("/") == 0 ){
+		}else if(operator_1.compareTo("/") == 0 && operator_2.compareTo("/") == 0 ){
 			
-			if(nb3a != 0 && nb5a != 0){
-				result = (nb1 / nb3a) / nb5a;
-				if(result == nb6a){
+			if(number_2 != 0 && number_3 != 0){
+				result = (number_1 / number_2) / number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -409,14 +409,14 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -428,11 +428,11 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 
-		}else if(nb2.compareTo("/") == 0 && nb4.compareTo("-") == 0 ){
+		}else if(operator_1.compareTo("/") == 0 && operator_2.compareTo("-") == 0 ){
 			
-			if(nb3a != 0){
-				result = (nb1 / nb3a) - nb5a;
-				if(result == nb6a){
+			if(number_2 != 0){
+				result = (number_1 / number_2) - number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -443,14 +443,14 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					
 					/*Give 1 pointst*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -462,11 +462,11 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 
-		}else if(nb2.compareTo("/") == 0 && nb4.compareTo("+") == 0 ){
+		}else if(operator_1.compareTo("/") == 0 && operator_2.compareTo("+") == 0 ){
 			
-			if(nb3a != 0){
-				result = (nb1 / nb3a) + nb5a;
-				if(result == nb6a){
+			if(number_2 != 0){
+				result = (number_1 / number_2) + number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -477,13 +477,13 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
@@ -496,11 +496,11 @@ public class Operations{
 				MainExec.getResult_displayLabel().setText("TRY");
 			}
 			
-		}else if(nb2.compareTo("/") == 0 && nb4.compareTo("x") == 0 ){
+		}else if(operator_1.compareTo("/") == 0 && operator_2.compareTo("x") == 0 ){
 			
-			if(nb3a != 0){
-				result = (nb1 / nb3a) * nb5a;
-				if(result == nb6a){
+			if(number_2 != 0){
+				result = (number_1 / number_2) * number_3;
+				if(result == screenResult){
 					
 					MainExec.getResult_displayLabel().setText("" + result);
 					/*Give 5 points*/
@@ -511,14 +511,14 @@ public class Operations{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(result >= nb6a + 2 || result <= nb6a - 2){
+				}else if(result >= screenResult + 2 || result <= screenResult - 2){
 					MainExec.getResult_displayLabel().setText("TRY");
 				}else{
 					
 					/*Give 1 points*/
 					Scores.setScore1();
-					resultat = String.valueOf(result);
-					MainExec.getResult_displayLabel().setText(resultat);
+					stringResult = String.valueOf(result);
+					MainExec.getResult_displayLabel().setText(stringResult);
 					try {
 						MainExec.getParty().next();
 					} catch (InterruptedException e) {
