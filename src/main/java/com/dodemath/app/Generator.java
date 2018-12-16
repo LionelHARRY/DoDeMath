@@ -1,7 +1,7 @@
 package com.dodemath.app;
 
 
-public class Generator {
+public class Generator implements Igenerator{
 
 	private int nb1, nb2, nb3, nb4, nb5, nb6;
 	private static String stnb1, stnb2, stnb3,stnb4, stnb5, stnb6;
@@ -219,5 +219,42 @@ public class Generator {
 	 */
 	public String[] getKeyNumbers(){
 		return keyNumbers;
+	}
+
+	@Override
+	public int sum(int a, int b) {
+		// TODO Auto-generated method stub
+		return a + b;
+	}
+
+	@Override
+	public int multiplication(int a, int b) {
+		// TODO Auto-generated method stub
+		return a * b;
+	}
+
+	@Override
+	public int substraction(int a, int b) {
+		// TODO Auto-generated method stub
+		return a - b;
+	}
+
+	@Override
+	public int division(int a, int b) throws Exception{
+		// TODO Auto-generated method stub
+		if(b == 0) {
+			throw new Exception();
+		}
+		return a / b;
+	}
+	
+	@Override
+	public boolean equalIntegers(int a, int b) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		if(a == b) {
+			result = true;
+		}
+		return result;
 	}
 }

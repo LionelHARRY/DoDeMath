@@ -8,23 +8,39 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class GeneratorTest {
-	private int minNumber;
-	private int maxNumber;
-	private int randomResult;
+	private static Igenerator generator;
 
-	@Before
-	public void setUp() {
-		minNumber = 6;
-		maxNumber = 20;
-		randomResult = minNumber + (int)(Math.random() * ((maxNumber - minNumber) + 1));
+	@BeforeClass
+	public static void initGenerator() {
+		generator = new Generator();
 	}
 	
 	@Test
-	public void notEqualRandoms() {
+	public void testSum() {
+		int result = generator.sum(3, 4);
 		
-		for(int i = 0; i < 6; i ++) {
-			assertNotEquals(randomResult, i);
-		}
-
+		assertEquals(7, result);
 	}
+	
+	@Test
+	public void testMultiplication() {
+		int result = generator.multiplication(2, 5);
+		
+		assertEquals(10, result);
+	}
+	
+	@Test
+	public void testDivision() {
+		int result;
+		try {
+			result = generator.division(6, 2);
+			assertEquals(3, result);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Cannot divide by 0");
+			e.printStackTrace();
+		}
+		
+	}
+	
 }
