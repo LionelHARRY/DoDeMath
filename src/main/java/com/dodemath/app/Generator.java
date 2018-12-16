@@ -90,112 +90,172 @@ public class Generator implements Igenerator{
 			numOp = nbMinOp + (int)(Math.random() * ((nbMaxOp - nbMinOp) + 1));
 			
 			/*Possible operations*/
-			if(numOp == 1 ){
-				nbc = (nb1 + nb4) + nb5;
-			}else if(numOp == 2 ){
-				if((nb4 + nb3) > nb5){
-					nbc = (nb4 + nb3) - nb5;
+			if(equalIntegers(numOp , 1 )){
+				nbc = sum(sum(nb1 , nb4) , nb5);
+			}else if(equalIntegers(numOp , 2 )){
+				if(sum(nb4 , nb3) > nb5){
+					nbc = substraction(sum(nb4 , nb3) , nb5);
 				}else{
-					nbc = (nb5 + nb4) - nb3;
+					nbc = substraction(sum(nb5 , nb4) , nb3);
 				}
-			}else if(numOp == 3){
-				nbc = (nb3 + nb2) * nb2;
-			}else if(numOp == 4 ){
-				if((nb6 + nb3) > nb1 && nb1 !=0){
-					nbc = (nb6 + nb3) / nb1;
-				}else if(nb3 !=0){
-					nbc = nb1 + (nb6 / nb3);
+			}else if(equalIntegers(numOp , 3)){
+				nbc = multiplication(sum(nb3 , nb2) , nb2);
+			}else if(equalIntegers(numOp , 4) ){
+				if(sum(nb6 , nb3) > nb1 && notEqualIntegers(nb1 , 0)){
+					try {
+						nbc = division(sum(nb6 , nb3) , nb1);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else if(notEqualIntegers(nb3 , 0)){
+					try {
+						nbc = sum(nb1 , division(nb6 , nb3));
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = nb1 + (nb3 / nb6);
+					try {
+						nbc = sum(nb1 , division(nb3 , nb6));
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			}else if(numOp == 5){
-				if((nb2 - nb3) > nb5){
-					nbc = (nb2 - nb3) - nb5;
+			}else if(equalIntegers(numOp , 5)){
+				if(substraction(nb2 , nb3) > nb5){
+					nbc = substraction(substraction(nb2 , nb3) , nb5);
 				}else{
-					nbc = (nb5 - nb2) - nb3;
+					nbc = substraction(substraction(nb5 , nb2) , nb3);
 				}
 				
-			}else if(numOp == 6){
+			}else if(equalIntegers(numOp , 6)){
 
 				if(nb1  > nb3){
-					nbc = (nb1 - nb3) + nb5;
+					nbc = sum(substraction(nb1 , nb3) , nb5);
 				}else{
-					nbc = (nb3 - nb1) + nb5;
+					nbc = sum(substraction(nb3 , nb1) , nb5);
 				}
 				
-			}else if(numOp == 7){
-				nbc = (nb2 - nb3) * nb5;
-			}else if(numOp == 8){
+			}else if(equalIntegers(numOp , 7)){
+				nbc = multiplication(substraction(nb2 , nb3) , nb5);
+			}else if(equalIntegers(numOp , 8)){
 				
-				if(nb6 != 0 && (nb4- nb1) > nb6){
-					nbc = (nb4 - nb1) / nb6;
+				if(notEqualIntegers(nb6 , 0) && substraction(nb4 , nb1) > nb6){
+					try {
+						nbc = division(substraction(nb4 , nb1) , nb6);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
 					numOp = 9;
 				}
 				
-			}else if(numOp == 9){
+			}else if(equalIntegers(numOp , 9)){
 				
-				nbc = (nb4 * nb5) * nb5;
+				nbc = multiplication(multiplication(nb4 , nb5) , nb5);
 		
-			}else if(numOp == 10){
+			}else if(equalIntegers(numOp , 10)){
 
-				if((nb5 * nb6) > nb4){
-					nbc = (nb5 * nb6) - nb5;
+				if(multiplication(nb5 , nb6) > nb4){
+					nbc = substraction(multiplication(nb5 , nb6) , nb5);
 				}else{
-					nbc = (nb5 * nb4) - nb6;
+					nbc = substraction(multiplication(nb5 , nb4) , nb6);
 				}
 				
-			}else if(numOp == 11 ){
+			}else if(equalIntegers(numOp , 11)){
 				
-				nbc = (nb1 * nb3) + nb6;
+				nbc = sum(multiplication(nb1 , nb3) , nb6);
 
-			}else if(numOp == 12){
-				if(nb2 != 0 && (nb3 * nb3) > nb2){
-					nbc = (nb3 * nb3) / nb2;
-				}else if(nb3 != 0) {
-					nbc = (nb3 * nb2) / nb3;
+			}else if(equalIntegers(numOp , 12)){
+				if(notEqualIntegers(nb2 , 0) && multiplication(nb3 , nb3) > nb2){
+					try {
+						nbc = division(multiplication(nb3 , nb3) , nb2);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else if(notEqualIntegers(nb3 , 0)) {
+					try {
+						nbc = division(multiplication(nb3 , nb2) , nb3);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = (nb1 * nb3) + nb6;
+					nbc = sum(multiplication(nb1 , nb3) , nb6);
 				}
 				
-			}else if(numOp == 13){
+			}else if(equalIntegers(numOp , 13)){
 
-				if(nb3 != 0 && nb6 != 0 ){
-					nbc = (nb2 / nb3) / nb6;
+				if(notEqualIntegers(nb3 , 0) && notEqualIntegers(nb6 , 0) ){
+					try {
+						nbc = division(division(nb2 , nb3) , nb6);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = (nb4 * nb5) * nb5;
+					nbc = multiplication(multiplication(nb4 , nb5) , nb5);
 				}
 				
-			}else if(numOp == 14){
+			}else if(equalIntegers(numOp , 14)){
 
-				if(nb3 > nb2 && nb2 !=0){
-					if((nb3 / nb2) > nb5 && nb5 != 0){
-						nbc = (nb3 / nb2) - nb5;
+				if(nb3 > nb2 && notEqualIntegers(nb2 , 0)){
+					try {
+						if(division(nb3 , nb2) > nb5 && notEqualIntegers(nb5 , 0)){
+							try {
+								nbc = substraction(division(nb3 , nb2) , nb5);
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 					
-				}else if(nb3 != 0){
-					nbc = (nb5 / nb3) - nb2;
+				}else if(notEqualIntegers(nb3 , 0)){
+					try {
+						nbc = substraction(division(nb5 , nb3) , nb2);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = (nb1 * nb3) + nb6;
+					nbc = sum(multiplication(nb1 , nb3) , nb6);
 				}
 				
-			}else if(numOp == 15){
-				if(nb4 != 0){
-					nbc = (nb6 / nb4) + nb1;
+			}else if(equalIntegers(numOp , 15)){
+				if(notEqualIntegers(nb4 , 0)){
+					try {
+						nbc = sum(division(nb6 , nb4) , nb1);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = (nb1 * nb3) + nb6;
+					nbc = sum(multiplication(nb1 , nb3) , nb6);
 				}
 
-			}else if(numOp == 16){
-				if(nb3 != 0){
-					nbc = (nb4 / nb3) * nb5;
+			}else if(equalIntegers(numOp , 16)){
+				if(notEqualIntegers(nb3 , 0)){
+					try {
+						nbc = multiplication(division(nb4 , nb3) , nb5);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}else{
-					nbc = (nb5 - nb2) - nb3;
+					nbc = substraction(substraction(nb5 , nb2) , nb3);
 				}
 
 			}
 			
-		}while(nbc == nb1 || nbc == nb2 || nbc == nb3 || nbc == nb4 || nbc == nb5 || nbc == nb6 );
+		}while(equalIntegers(nbc , nb1) || equalIntegers(nbc , nb2) || equalIntegers(nbc , nb3) || equalIntegers(nbc , nb4) || equalIntegers(nbc , nb5) || equalIntegers(nbc , nb6) );
 		
 		
 		stnbc = Integer.toString(nbc);
@@ -221,25 +281,41 @@ public class Generator implements Igenerator{
 		return keyNumbers;
 	}
 
-	@Override
+
+	/**
+	 * Sum of two integers
+	 * @return int
+	 */
 	public int sum(int a, int b) {
 		// TODO Auto-generated method stub
 		return a + b;
 	}
 
-	@Override
+
+	/**
+	 * Multiplication of two integers
+	 * @return int
+	 */
 	public int multiplication(int a, int b) {
 		// TODO Auto-generated method stub
 		return a * b;
 	}
 
-	@Override
+
+	/**
+	 * Substration of two integers
+	 * @return int
+	 */
 	public int substraction(int a, int b) {
 		// TODO Auto-generated method stub
 		return a - b;
 	}
 
-	@Override
+
+	/**
+	 * Division of two integers
+	 * @return int
+	 */
 	public int division(int a, int b) throws Exception{
 		// TODO Auto-generated method stub
 		if(b == 0) {
@@ -248,11 +324,31 @@ public class Generator implements Igenerator{
 		return a / b;
 	}
 	
-	@Override
+
+	/**
+	 * Checking if two integers are equal.
+	 * returns 'true' if they are
+	 * @return boolean
+	 */
 	public boolean equalIntegers(int a, int b) {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		if(a == b) {
+			result = true;
+		}
+		return result;
+	}
+
+
+	/**
+	 * Checking if two integers are not equal.
+	 * returns 'true' if they are not equal.
+	 * @return boolean
+	 */
+	public boolean notEqualIntegers(int a, int b) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		if(a != b) {
 			result = true;
 		}
 		return result;

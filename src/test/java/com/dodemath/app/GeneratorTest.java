@@ -2,6 +2,7 @@ package com.dodemath.app;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -41,6 +42,13 @@ public class GeneratorTest {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	@Test
+	public void testEqualIntegers() {
+		boolean result = generator.equalIntegers(5, 5);
+		
+		assertTrue(result);
 	}
 	
 }
