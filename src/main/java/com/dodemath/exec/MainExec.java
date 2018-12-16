@@ -177,17 +177,6 @@ public class MainExec{
 		switch(btnOk.getText()){
 		case("GO"):		
 			startParty();
-
-			// A Listener for the Label chronoDP. Stops the party when the time equals 0.
-			chronoDP.textProperty().addListener(new ChangeListener<String>() {
-			    @Override
-			    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
-			        if(newValue.equals("0")){
-			        	party.stop();
-			        }
-			    }
-			});
 			break;
 		case("NO"):
 			party.stop();
@@ -203,7 +192,20 @@ public class MainExec{
 		party = new Party();
 		actualParty = party;
 		party.start();
+		
+		// A Listener for the Label chronoDP. Stops the party when the time equals 0.
+		chronoDP.textProperty().addListener(new ChangeListener<String>() {
+		    @Override
+		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+		        if(newValue.equals("0")){
+		        	party.stop();
+		        	firstView.setVisible(true);
+		        }
+		    }
+		});
 	}
+
 	
 	/**
 	 * Displays values pressed on the keyboard on a screen.

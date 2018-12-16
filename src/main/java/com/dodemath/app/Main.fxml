@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" onKeyPressed="#EnterKeyPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dodemath.exec.MainExec">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#EnterKeyPressed" prefHeight="515.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dodemath.exec.MainExec">
    <children>
       <AnchorPane fx:id="toolbar" onMouseDragged="#toolbarDragged" onMousePressed="#toolbarPressed" prefHeight="24.0" prefWidth="438.0" style="-fx-background-color: #313131;">
          <children>
@@ -51,7 +51,7 @@
                         <Font size="8.0" />
                      </font>
                   </Label>
-                  <Label id="chronoDP" fx:id="chronoDP" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="117.0" text="" textAlignment="CENTER" textFill="#0bf5f1">
+                  <Label id="chronoDP" fx:id="chronoDP" alignment="CENTER" contentDisplay="CENTER"  prefHeight="53.0" prefWidth="117.0" text="" textAlignment="CENTER" textFill="#0bf5f1">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -162,7 +162,7 @@
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btn5" fx:id="btnMulti" mnemonicParsing="false" onAction="#keyboardPressed" prefHeight="71.0" prefWidth="96.0" style="-fx-border-radius: 10; -fx-background-color: #ffffff19;" text="x" GridPane.columnIndex="4">
+                  <Button id="btn5" fx:id="btnMulti" mnemonicParsing="false" onAction="#keyboardPressed" prefHeight="71.0" prefWidth="96.0" style="-fx-background-radius: 10; -fx-background-color: #ffffff19;" text="x" GridPane.columnIndex="4">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                      </GridPane.margin>
@@ -197,7 +197,7 @@
             <Button fx:id="btnOk" layoutX="363.0" layoutY="340.0" mnemonicParsing="false" onAction="#mainButtonPressed" prefHeight="141.0" prefWidth="76.0" style="-fx-background-radius: 10; -fx-background-color: #ffffff19;" text="GO" AnchorPane.rightAnchor="11.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="firstView" layoutY="24.0"  prefHeight="492.0" prefWidth="438.0" style="-fx-background-color: #313131;">
+      <AnchorPane fx:id="firstView" layoutY="24.0" prefHeight="492.0" prefWidth="438.0" style="-fx-background-color: #313131;">
          <children>
             <Button fx:id="btnPlay" layoutX="150.0" layoutY="375.0" mnemonicParsing="false" onAction="#readyToplay" prefHeight="68.0" prefWidth="139.0" style="-fx-background-radius: 30; -fx-background-color: #ffffff19;" text="PLAY" textFill="#fcf9f9">
                <font>
