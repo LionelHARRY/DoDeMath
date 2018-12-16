@@ -86,9 +86,13 @@ public class MainExec{
  		if(firstView.isVisible() && event.getCode().equals(KeyCode.ENTER)){
 			firstAnchorpaneAction();
 		}else if(!firstView.isVisible() && event.getCode().equals(KeyCode.ENTER)){
+			if(btnOk.getText().equals("NO")){
+				party.stop();
+				firstView.setVisible(true);
+			}
 			startStopAction();
 		}
- 		if(btnOk.getText().equals("NO")){
+ 		if(!firstView.isVisible()){
 			if(event.getCode().isDigitKey()){
 				ArrayList<String> availableNumbers = new ArrayList<>();
  				availableNumbers.add(key1.getText());
