@@ -180,6 +180,7 @@ public class MainExec{
 			break;
 		case("NO"):
 			party.stop();
+			firstView.setVisible(true);
 			break;
 		}
 		
@@ -200,6 +201,17 @@ public class MainExec{
 
 		        if(newValue.equals("0")){
 		        	party.stop();
+		        	firstView.setVisible(true);
+		        }
+		    }
+		});
+		
+		// A Listener for the Label result_display. Stops the party when the result of the operaitioln is not correct.
+		result_display.textProperty().addListener(new ChangeListener<String>() {
+		    @Override
+		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+		        if(newValue.equals("FAIL")){
 		        	firstView.setVisible(true);
 		        }
 		    }
