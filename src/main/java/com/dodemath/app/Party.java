@@ -11,7 +11,7 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 
 
-public class Party {
+public class Party implements Iparty{
 	private Generator generator;
 	private Chrono chrono;
 	private EditFile file;
@@ -31,7 +31,8 @@ public class Party {
 	public void start(){
 		MainExec.getOkButton().setText("NO");
 		MainExec.getScoreLabel().setText("0");
-		MainExec.getPointsLabel().setText("0");
+		MainExec.getPointsLabel().setText("");
+		MainExec.getLabel_for_PtsDPLable().setVisible(false);
 		try {
 			recordedScore = file.readFile();
 		} catch (IOException e) {
@@ -64,19 +65,27 @@ public class Party {
 		recordedScoreInt = Integer.parseInt(recordedScore);
 		
 		if(scoreInt > recordedScoreInt){
+			
 			try {
 				file.writeFile(score);
+				MainExec.getAnchor1_display2Label().setText("Yolo");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			//MainExec.getAnchor1_display2Label().setText("Yolo");
 		}
+		
+		MainExec.getAnchor1_main_displayLabel().setVisible(true);
+		MainExec.getAnchor1_main_displayLabel().setText(scoreInt + " pts");
+		//MainExec.getAnchor1_display2Label().setVisible(true);
+		//MainExec.getAnchor1_display2Label().setText("Yolo");
 		
 		MainExec.getOkButton().setText("GO");
 		MainExec.getMain_displayLabel().setText("");
 		MainExec.getResult_displayLabel().setText("");
-		MainExec.getScoreLabel().setText("");
-		MainExec.getPointsLabel().setText("");
+
 		MainExec.getDpn1().setText("");
 		MainExec.getDpn2().setText("");
 		MainExec.getDpn3().setText("");
@@ -88,6 +97,8 @@ public class Party {
 		MainExec.getKey4().setText("");
 		MainExec.getKey5().setText("");
 		MainExec.getKey6().setText("");
+		
+		
 		
 	}
 	
@@ -131,6 +142,7 @@ public class Party {
         		
             	MainExec.getResult_displayLabel().setText("");
             	MainExec.getPointsLabel().setText("");
+            	MainExec.getLabel_for_PtsDPLable().setVisible(false);
         		MainExec.getDpn1().setText("");
         		MainExec.getDpn2().setText("");
         		MainExec.getDpn3().setText("");

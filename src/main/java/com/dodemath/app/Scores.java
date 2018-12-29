@@ -4,7 +4,9 @@ import com.dodemath.exec.MainExec;
 
 public class Scores{
 
-	
+	/**Set a new score of 1
+	 * 
+	 */
 	public static void setScore5(){
 
 
@@ -12,6 +14,7 @@ public class Scores{
 		int points = 5;
 		String stPoints = String.valueOf(points);
 		MainExec.getPointsLabel().setText(stPoints);
+		MainExec.getLabel_for_PtsDPLable().setVisible(true);
 		
 		/*Initial score*/
 		String ScoreIni = MainExec.getScoreLabel().getText();
@@ -25,16 +28,16 @@ public class Scores{
 	}
 	
 	
-	/**Sum all the score
+	/**Set a new score of 1
 	 * 
-	 * @see Score#score
-	 * @param pt
 	 */
 	public static void setScore1(){
 
+		/*Displays the score*/
 		int points = 1;
 		String stPoints = String.valueOf(points);
 		MainExec.getPointsLabel().setText(stPoints);
+		MainExec.getLabel_for_PtsDPLable().setVisible(true);
 		
 		/*Initial score*/
 		String ScoreIni = MainExec.getScoreLabel().getText();

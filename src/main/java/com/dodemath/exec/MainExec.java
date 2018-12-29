@@ -51,10 +51,16 @@ public class MainExec{
 	private @FXML Label result_display;
 	private @FXML Label chronoDP;
 	private @FXML Label pointsDP;
+	private @FXML Label label_for_PtsDP;
 	private @FXML Label scoreDP;
 	private @FXML Label bestScoreDP;
+	private @FXML Label anchor1_main_display;
+	private @FXML Label anchor1_display2;
+	private static Label anchor1_main_displayLabel;
+	private static Label anchor1_display2Label;
 	private static Label chronoLabel;
 	private static Label pointsLabel;
+	private static Label label_for_PtsDPLabel;
 	private static Label scoreLabel;
 	private static Label bestScoreLabel;
 	private static Label dpn1Label;
@@ -72,7 +78,7 @@ public class MainExec{
 	private static Button key5Button;
 	private static Button key6Button;
 	
-	
+
 	/**
 	 * Listen to the keyboard (hardware). The player can use digital keys to select numbers and 'enter' key when validation is needed.
 	 * 'enter' key is also used to start or stop the party.
@@ -139,10 +145,14 @@ public class MainExec{
 		
 		chronoLabel = chronoDP;
 		pointsLabel = pointsDP;
+		label_for_PtsDPLabel = label_for_PtsDP;
 		scoreLabel = scoreDP;
 		bestScoreLabel = bestScoreDP;
 		main_displayLabel = main_display;
 		result_displayLabel = result_display;
+		
+		anchor1_main_displayLabel = anchor1_main_display;
+		anchor1_display2Label = anchor1_display2;
 		
 		dpn1Label = dpn1;
 		dpn2Label = dpn2;
@@ -250,12 +260,24 @@ public class MainExec{
 		}
 	}
 	
+	public static Label getAnchor1_main_displayLabel() {
+		return anchor1_main_displayLabel;
+	}
+	
+	public static Label getAnchor1_display2Label() {
+		return anchor1_display2Label;
+	}
+	
 	public static Label getChronoLabel(){
 		return chronoLabel;
 	}
 	
 	public static Label getPointsLabel(){
 		return pointsLabel;
+	}
+	
+	public static Label getLabel_for_PtsDPLable(){
+		return label_for_PtsDPLabel;
 	}
 	
 	public static Label getScoreLabel(){

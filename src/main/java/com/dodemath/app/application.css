@@ -22,7 +22,7 @@
 
 }
 
-#labelChrono,  #labelScore, #labelPoints, #labelTS {
+#labelChrono{
 	-fx-background-color:  #0bf5f1;
 	
 }
